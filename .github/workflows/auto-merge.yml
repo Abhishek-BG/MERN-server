@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          token: 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 # Use the PAT here
+          token: ${{ secrets.ACTIONS_PAT }}  # Ensure correct secret name
 
       - name: Configure Git
         run: |
