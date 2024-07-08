@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-            token: ${{secrets.ACTIONS_PAT}}
+          token: ${{ secrets.ACTIONS_PAT }}  # Ensure correct secret name
 
       - name: Configure Git
         run: |

@@ -14,21 +14,19 @@ app.use(express.json())
 app.use(cors()) //using cors
 mongoose.connect(url,{useNewUrlParser:true,
 useUnifiedTopology:true})
-.then(()=>{console.log('DB connected')})
+.then(()=>{})
 .catch((err)=>{console.log(err)})
+
 const server = new ApolloServer({typeDefs,resolvers});
 app.use('/users',userApiFromRouter);//add router
+
 async function StartServer(){
    await server.start();
    server.applyMiddleware({app});
    app.listen(port,()=>{
-    console.log('Server Live 3001');
+   //  console.log('Server Live 3001');
    })
 }
-function TESTING(){
-    return 1;
-}
-function Test2(){return false;}
-TESTING();
-Test2();
+
 StartServer();
+module.exports = app; // Export the Express app for testing

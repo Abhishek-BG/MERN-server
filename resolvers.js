@@ -3,7 +3,8 @@ const resolvers = {
     Query:{
         getUsers: async (_,{id})=>{
             return await User.findById(id)
-        }
+        },
+        getAllUsers: async()=>{return await User.find()}
     },
     Mutation:{
         createUser: async (_,{input})=>{
@@ -17,6 +18,7 @@ const resolvers = {
            return await newUser.save();
         }catch(err){throw Error(err);}
     },
+    
     changePass: async(_,{id,password})=>{
         try{
             const userNew = await 
