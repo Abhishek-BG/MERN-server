@@ -15,7 +15,7 @@ app.use(cors()) //using cors
 mongoose.connect(url,{useNewUrlParser:true,
 useUnifiedTopology:true})
 .then(()=>{})
-.catch((err)=>{console.log(err)})
+.catch((err)=>{})
 
 const server = new ApolloServer({typeDefs,resolvers});
 app.use('/users',userApiFromRouter);//add router
@@ -24,9 +24,8 @@ async function StartServer(){
    await server.start();
    server.applyMiddleware({app});
    app.listen(port,()=>{
-   //  console.log('Server Live 3001');
+    console.log('Server Live 3001');
    })
 }
 
 StartServer();
-module.exports = app; // Export the Express app for testing
