@@ -23,10 +23,10 @@ app.use('/users',userApiFromRouter);//add router
 async function StartServer(){
    await server.start();
    server.applyMiddleware({app});
-   const httpServer= app.listen(port,()=>{
+   app.listen(port,()=>{
     console.log('Server Live 3001');
    })
-   return httpServer;
+
 }
 
 StartServer();
