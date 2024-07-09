@@ -29,5 +29,5 @@ async function StartServer(){
    return httpServer;
 }
 
-
-module.exports={app,StartServer};
+StartServer();
+module.exports={app};
